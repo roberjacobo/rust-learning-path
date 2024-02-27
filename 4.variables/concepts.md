@@ -26,7 +26,7 @@ Below is a table categorizing data types in Rust, with examples:
 
 ### Integer types
 
-| Length  | Signed         | Unsigned       | Ejemplo de Rango         |
+| Length  | Signed (+/-)   | Unsigned       | Example                  |
 |---------|----------------|----------------|--------------------------|
 | 8-bit   | i8             | u8             | -128 a 127               |
 |         |                |                | 0 a 255                  |
