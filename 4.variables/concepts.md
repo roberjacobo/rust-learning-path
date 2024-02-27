@@ -1,24 +1,42 @@
 ```mermaid
 graph LR
 
-A[Variables] --> B(mutables) --> D(let mut x)
-A --> C(inmutables) --> E(let x) 
+A[Variables] --> B(Mutable) --> D(let mut x)
+A --> C(Immutable) --> E(let x) 
 C --> F(const x)
 ```
 
-## Tipos de Variables en Rust
+## Types of Variables in Rust
 
-A continuación, se presenta una tabla que categoriza los tipos de datos en Rust, con ejemplos:
+Below is a table categorizing data types in Rust, with examples:
 
-| Categoría               | Tipo de Dato                            | Descripción                                                                       | Ejemplo                                           |
-|-------------------------|-----------------------------------------|-----------------------------------------------------------------------------------|---------------------------------------------------|
-| **Números Enteros**     | `u8`, `u16`, `u32`, `u64`, `u128`       | Enteros sin signo de 8, 16, 32, 64 y 128 bits.                                    | `let num: u32 = 100;`                             |
-|                         | `i8`, `i16`, `i32`, `i64`, `i128`       | Enteros con signo de 8, 16, 32, 64 y 128 bits.                                    | `let num: i32 = -100;`                            |
-| **Números de Punto Flotante** | `f32`, `f64`                          | Números de punto flotante de 32 y 64 bits.                                        | `let floating_point: f64 = 0.123;`                |
-| **Texto**               | `String`, `&str`                        | Cadenas de texto propiedad y referencias a cadenas, respectivamente.              | `let text: String = "Hello".to_string();`         |
-|                         |                                         |                                                                                   | `let text: &str = "World";`                       |
-| **Booleanos**           | `bool`                                  | Valores booleanos `true` o `false`.                                               | `let is_true: bool = true;`                       |
-| **Compuestos**          | Tuplas                                  | Agrupa valores de diferentes tipos juntos.                                        | `let tuple: (i32, f64, u8) = (500, 6.4, 1);`      |
-|                         | Arrays                                  | Colección de valores del mismo tipo.                                              | `let arr: [i32; 5] = [1, 2, 3, 4, 5];`             |
-|                         | Structs                                 | Define una estructura con campos nombrados.                                       | `struct Person { name: String, age: u8 }`         |
-|                         | Enums                                   | Define un tipo por enumeración con variantes.                                     | `enum Direction { Up, Down, Left, Right }`        |
+| Category                      | Data Type                                | Description                                                                      | Example                                          |
+|-------------------------------|------------------------------------------|----------------------------------------------------------------------------------|--------------------------------------------------|
+| **Integer Numbers**           | `u8`, `u16`, `u32`, `u64`, `u128`        | Unsigned integers of 8, 16, 32, 64, and 128 bits.                                | `let num: u32 = 100;`                            |
+|                               | `i8`, `i16`, `i32`, `i64`, `i128`        | Signed integers of 8, 16, 32, 64, and 128 bits.                                  | `let num: i32 = -100;`                           |
+| **Floating-Point Numbers**    | `f32`, `f64`                             | Floating-point numbers of 32 and 64 bits.                                        | `let floating_point: f64 = 0.123;`               |
+| **Text**                      | `String`, `&str`                         | Owned strings and string slices, respectively.                                   | `let text: String = "Hello".to_string();`        |
+|                               |                                          |                                                                                  | `let text: &str = "World";`                      |
+| **Booleans**                  | `bool`                                   | Boolean values `true` or `false`.                                                | `let is_true: bool = true;`                      |
+| **Compound Types**            | Tuples                                   | Groups different types of values together.                                       | `let tuple: (i32, f64, u8) = (500, 6.4, 1);`     |
+|                               | Arrays                                   | Collection of values of the same type.                                           | `let arr: [i32; 5] = [1, 2, 3, 4, 5];`            |
+|                               | Structs                                  | Defines a structure with named fields.                                           | `struct Person { name: String, age: u8 }`        |
+|                               | Enums                                    | Defines a type by enumeration with variants.                                     | `enum Direction { Up, Down, Left, Right }`       |
+
+
+### Integer types
+
+| Length  | Signed         | Unsigned       | Ejemplo de Rango         |
+|---------|----------------|----------------|--------------------------|
+| 8-bit   | i8             | u8             | -128 a 127               |
+|         |                |                | 0 a 255                  |
+| 16-bit  | i16            | u16            | -32,768 a 32,767         |
+|         |                |                | 0 a 65,535               |
+| 32-bit  | i32            | u32            | -2,147,483,648 a 2,147,483,647 |
+|         |                |                | 0 a 4,294,967,295        |
+| 64-bit  | i64            | u64            | -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807 |
+|         |                |                | 0 a 18,446,744,073,709,551,615 |
+| 128-bit | i128           | u128           | -170,141,183,460,469,231,731,687,303,715,884,105,728 a 170,141,183,460,469,231,731,687,303,715,884,105,727 |
+|         |                |                | 0 a 340,282,366,920,938,463,463,374,607,431,768,211,455 |
+| arch    | isize          | usize          | Depende de la arquitectura |
+|         |                |                | Depende de la arquitectura |
