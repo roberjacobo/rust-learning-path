@@ -40,3 +40,23 @@ Below is a table categorizing data types in Rust, with examples:
 |         |                |                | 0 a 340,282,366,920,938,463,463,374,607,431,768,211,455 |
 | arch    | isize          | usize          | Depende de la arquitectura |
 |         |                |                | Depende de la arquitectura |
+
+
+## Floating-Point Types in Rust
+
+Rust provides two primary types for representing numbers with decimal points, known as floating-point types. These are essential for calculations that require more precision than integers can offer. The table below outlines the two floating-point types available in Rust.
+
+| Type  | Size (bits) | Precision      | Default | Description                                                                 |
+|-------|-------------|----------------|---------|-----------------------------------------------------------------------------|
+| `f64` | 64          | Double         | Yes     | Offers more precision and is as fast as `f32` on modern CPUs.               |
+| `f32` | 32          | Single         | No      | Single-precision float, less precise than `f64` but uses less memory.       |
+
+### Example
+
+Here's a simple example demonstrating the use of floating-point numbers in Rust:
+
+```rust
+fn main() {
+    let x = 2.0; // f64 by default
+    let y: f32 = 3.0; // explicitly specifying f32
+}
